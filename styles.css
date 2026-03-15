@@ -1,1 +1,71 @@
-/* css styles */
+/* --- Klas & Profesyonel Stil --- */
+:root {
+  --charcoal: #333333;     /* Koyu füme (Başlıklar için) */
+  --lila-accent: #8E7AB5;  /* Vurgu lila (Buton ve linkler) */
+  --beige-bg: #FAF9F6;     /* Yumuşak bej arka plan */
+  --text-main: #4A4A4A;    /* Standart yazı rengi */
+}
+
+/* Sayfa Genel Yazı Boyutu ve Tipi */
+body {
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Başlıklar - Koyu Füme ve Daha Güçlü */
+h1, h2, h3, h4, .navbar-title {
+  color: var(--charcoal) !important;
+  font-weight: 700 !important;
+}
+
+/* Üst Menü (Navbar) Yazıları */
+.navbar-nav .nav-link {
+  font-size: 1.1rem !important;
+  color: var(--lila-accent) !important; /* Sekme geçişleri lila kalsın dedin */
+  fontsize: "1.15rem"
+  font-weight: 550;
+}
+
+/* Yan Menü (Sidebar - Assignments) Yazıları */
+/* Küçük kalan yazıları buradan büyütüyoruz */
+.sidebar nav[role="doc-toc"], .sidebar .sidebar-item {
+  font-size: 1.1rem !important;
+  line-height: 1.5;
+}
+
+.sidebar-title {
+  font-size: 1.25rem !important;
+  color: var(--charcoal) !important;
+}
+
+/* Fotoğraf Düzenlemesi (Gölge kalktı, sadece yuvarlak köşeler) */
+img {
+  border-radius: 25px; 
+  box-shadow: none !important; /* Gölgeyi tamamen kaldırdık */
+  border: 1px solid #ddd;      /* Çok hafif bir çerçeve hatları belirginleştirir */
+  margin-bottom: 20px;
+}
+
+/* CV Butonu - Daha Klas bir Hap Tasarım */
+.btn-primary {
+  background-color: var(--lila-accent) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 10px 25px !important;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Linklerin alt çizgilerini daha zarif yap */
+a {
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: var(--charcoal) !important;
+}
+h1 {
+  border-bottom: 2px soft #8E7AB5;
+  padding-bottom: 3px;
+}

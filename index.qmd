@@ -2,8 +2,8 @@
 title: "Welcome to My Analytics Lab"
 ---
 
-Hello!! My name is Büşra HALİL.
+Hello!! My name is Büşra.
 
 This is my personal webpage.
 
-Please stay tuned to follow my works on data analytics, blog posts, and more. :)
+Please stay tuned to follow my works on data analytics, blog posts, and more.  :)

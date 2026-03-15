@@ -22,11 +22,9 @@ website:
             
     tools:
       - icon: github
-        href: https://twitter.com
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/busrahalil
       - icon: linkedin
-        href: https://linkedin.com
+        href: https://linkedin.com/in/busrahll
 
   sidebar:
     - title: "Assignments"
@@ -41,14 +39,16 @@ website:
   page-footer:
     center: "Hacettepe IE - EMU660 - Spring 2026" 
     border: true
+ 
 format:
   html:
+    theme: cosmo
+    css: styles.css
     toc: true
     toc-location: left
-    theme: 
-      light: simplex 
-      dark: cyborg
-    css: styles.css
+    mainfont: "Sans Serif"
+    fontsize: "1.15rem"
+    link-color: "#8E7AB5" # Lila linkler
 
 
 editor: visual

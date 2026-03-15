@@ -3,35 +3,34 @@ title: "About Me"
 sidebar: false 
 ---
 
-![](assets/images/.jpeg){fig-align="center"}
+![](assets/images/busra222.jpeg){fig-align="left"}
 
 # Education
 
--   B.S., Industrial Engineering, Çankaya University, Turkey, 2019 - 2025 January.
 -   M.S., Industrial Engineering, Hacettepe University, Turkey, 2026 - ongoing.
+-   B.S., Industrial Engineering, Çankaya University, Turkey, 2019 - Jan 2025 
 
 # Work Experience
 
 ## Internships
 
-1.  ASELSAN, Intern, 2023
+-  ASELSAN, Intern in Production and Project Management Departments, 2023
 
-2.  United Parcel Service Inc. (UPS), Intern, 2024
+-  United Parcel Service Inc. (UPS), Intern in Operation Planning Department, 2024
 
 # Projects
 
-## Graduation Projects
-
-1. "Kargo Taşıma Operasyonlarında Bant Hattı Dengeleme ve Çapraz Sevkiyatta Kargo Boşaltma Çizgeleme Optimizasyonu", UPS Türkiye A.Ş., 2023-2024
+-  "Conveyor Flow Balancing and Truck Unloading Scheduling Optimization in Cross-Dock Cargo Operations" (Graduation Project), Oct 2023 – Jul 2024
 
 # Competencies
 
-Minitab, ERP, VBA, C#, R, Quarto, Git
+Minitab, VBA, C#, R, Quarto, Git
 
 # Hobbies
 
-Archery, Volleyball, Cycling
+Archery, Volleyball, Cycling, Reading
 
 
+[⬇ View My CV](assets/cv/Busrah_cv.pdf){.btn .btn-primary}
 
 

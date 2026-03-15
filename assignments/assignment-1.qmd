@@ -2,14 +2,161 @@
 title: "Assignment 1"
 ---
 
-# Assignment 1
+My first assignment has four parts.
 
+## (a) Video Summary
+[Video link](https://youtu.be/1Mvkn71dhaA?si=0ZoFLpKDZRCL9_Cu): Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler – Mustafa Baydoğan & Erdi Daşdemir
+
+
+In this video, Mustafa Baydoğan talks about the relationship between data science and industrial engineering and how data analysis methods are used to solve real-world problems. He explains that industrial engineers already work with tools like optimization, modeling, and system analysis, which are also essential in data science.
+
+One of the main ideas in the talk is that before using machine learning or other data science techniques, it is important to first understand the real system and the problem itself. If the problem is not clearly defined, even very advanced models may give results that are not meaningful. Industrial engineers approach problems by analyzing the system, identifying key variables, and then building models that reflect the real situation.
+
+The speaker also highlights real-world applications such as inventory management, demand forecasting in energy, e-commerce recommendation systems, and image-based predictions in manufacturing. These examples demonstrate that data science is not just about prediction but about supporting actionable decisions.
+
+Another topic discussed in the video is the difference between traditional machine learning models and deep learning methods. Deep learning is especially useful when working with complex data like images, text, or audio. However, in many business problems, simpler and interpretable models are preferred because they are easier to understand and explain.
+
+Overall, industrial engineers have an advantage in data science due to their ability to analyze systems, extract meaningful variables, and turn data into actionable decisions.
+
+## (b) Questions
+1. Why is it important to understand the real system before applying machine learning or data science methods?
+
+Answer:
+Understanding the system helps identify the real cause of the problem and the important variables. If we directly apply machine learning without understanding the problem, the model may find patterns in the data but those patterns might not represent the real situation. When the problem is clearly understood, data science methods can be used more effectively.
+
+2. According to the speaker, why are simpler and interpretable models often preferred in many business applications?
+
+A) Because they always give the most accurate results
+B) Because they need very large datasets
+C) Because decision makers need to understand the model results
+D) Because they only work with structured data
+
+Answer: C
+
+## (c) Exploring Statistical Summaries with Custom Functions and Iteration Methods:
+
+In this section 'mtcars' data set is used, and a custom statistical summary function is defined.
 ```{r}
-1 + 1
+#import mtcars dataset
+data(mtcars)
+
+#define a custom summary function
+compute_stats <- function(x) {
+  #check if data is numeric
+  if (!is.numeric(x)) {
+    stop("It must be a numeric vector.")
+  }
+  cars_stats_list <- list(mean = mean(x), 
+                          median = median(x), 
+                          variance = var(x), 
+                          IQR = IQR(x), 
+                          min = min(x), 
+                          max = max(x))
+  
+  return(cars_stats_list)
+}
+
+cars_stats_hp <- compute_stats(mtcars$hp)
+print(cars_stats_hp)
+```
+The "compute_stats" function is applied using for loop to calculate each data statistics.
+```{r} 
+#applying the function using for loop  
+for (column in names(mtcars)) {
+  cat("Summary for Column:", column,"\n")
+  print(compute_stats(mtcars[[column]])) 
+}
 ```
 
-My first assignment has two parts.
+```{r}
+#alternative approach with sapply
+sapply(mtcars, compute_stats)
+```
+```{r}
+#alternative approach with apply
+apply(mtcars, 2, compute_stats)
+```
+## (d) Displaying and Manipulating the ‘polls_us_election_2016’ Dataset 
 
-## (a)
+The 'polls_us_election_2016' data set from the 'dslabs' package is used. 
+```{r}
+#install.packages("dslabs")
+library(dslabs)
+#import polls_us_election_2016 data set
+data("polls_us_election_2016")
 
-## (b)
+#define personnel information variables
+my_first <- "Büşra"
+my_birth_year <- 2000
+
+#calculate integer k
+k <- (nchar(my_first) + my_birth_year) %% 15 + 8
+print(paste("The value of k:",k))
+```
+k rows are displayed according to k value whether it is odd or even.
+```{r}
+# Display k rows based on the value of k
+if (k %% 2 == 0) {
+  cat("k is even. The first", k, "rows of the data set are displayed below:\n")
+  head(polls_us_election_2016, k)
+  
+} else {
+  cat("k is odd. The last", k, "rows of the dataset are displayed below:\n")
+  tail(polls_us_election_2016, k)
+}
+```
+```{r}
+#total number of NAs in the data set 
+total_NA <- sum(is.na(polls_us_election_2016))
+print(paste("Total number of NA values in the entire data set:", total_NA))
+```
+
+```{r}
+#number of NA values per column
+na_per_col <- colSums(is.na(polls_us_election_2016))
+
+#sort NA values per column from largest to smallest
+sort_na_per_col <- sort(na_per_col, decreasing = TRUE)[1:8]
+print( sort_na_per_col)
+```
+
+```{r}
+#new object
+replace_new <- polls_us_election_2016
+
+#replace NA values according to column type. If numeric 2018, otherwise Büşra_18
+for (column in colnames(replace_new)) {
+  
+  if (is.numeric(replace_new[[column]])) {
+    replace_new[[column]][is.na(replace_new[[column]])] <- my_birth_year + k
+    
+  } else {
+    replace_new[[column]] <- as.character(replace_new[[column]])
+    replace_new[[column]][is.na(replace_new[[column]])] <- paste0(my_first, "_", k)
+    
+  }
+}
+```
+
+```{r}
+#display k rows of the new data frame
+if (k %% 2 == 0) {
+  cat("k is even. The first", k, "rows of the new data set are displayed below:\n")
+  head(replace_new, k)
+  
+} else {
+  cat("k is odd. The last", k, "rows of the new data set are displayed below:\n")
+  tail(replace_new, k)
+  
+}
+```
+```{r}
+#total NA values remaining
+total_NA_new <- sum(is.na(replace_new))
+print(paste("Total number of NA values remaining:", total_NA_new))
+```
+
+```{r}
+#check if any NA values remain
+print(anyNA(replace_new))
+```
