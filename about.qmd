@@ -31,6 +31,5 @@ Minitab, VBA, C#, R, Quarto, Git
 Archery, Volleyball, Cycling, Reading
 
 
-[⬇ View My CV](assets/cv/Busrah_cv.pdf){.btn .btn-primary}
-
+[⬇ View My CV](assets/cv/Busrah_cv.pdf){.btn .btn-primary target="_blank"}
 
