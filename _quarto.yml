@@ -3,9 +3,11 @@ project:
   output-dir: docs
 
 website:
-  title: "[Busra]'s Analytics Lab"
+  title: "Busra's Analytics Lab"
   navbar:
     search: true
+    background: "#ffffff"
+    foreground: "#2F2F35"
     left:
       - text: Home
         href: index.qmd
@@ -19,7 +21,7 @@ website:
             href: assignments.qmd
           - text: Project
             href: project.qmd
-            
+
     tools:
       - icon: github
         href: https://github.com/busrahalil
@@ -33,23 +35,23 @@ website:
       contents:
         - assignments.qmd
         - assignments/assignment-1.qmd
-        - assignments/assignment-2.qmd  
+        - assignments/assignment-2.qmd
+
   page-navigation: true
   back-to-top-navigation: true
+
   page-footer:
-    center: "Hacettepe IE - EMU660 - Spring 2026" 
+    center: "Hacettepe IE · EMU660 · Spring 2026"
     border: true
- 
+
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
     toc-location: left
-    mainfont: "Sans Serif"
-    fontsize: "1.15rem"
-    link-color: "#8E7AB5" # Lila linkler
-
+    mainfont: "Inter, Source Sans 3, Segoe UI, Arial, sans-serif"
+    fontsize: "1.04rem"
+    link-color: "#8B1E1E"
 
 editor: visual
-
